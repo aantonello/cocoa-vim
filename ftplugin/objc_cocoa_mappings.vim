@@ -18,6 +18,11 @@ if empty(b:cocoa_proj)
 		endif
 	endif
 endif
+
+if empty(b:cocoa_proj)
+    finish
+endif
+
 let g:x = b:cocoa_proj
 
 com! -buffer ListMethods call objc#method_list#Activate(1)

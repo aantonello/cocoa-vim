@@ -22,13 +22,12 @@ def find_headers(root_folder, frameworks):
 
 def default_headers():
     '''Headers for common Cocoa frameworks.'''
-    cocoa_frameworks = ('Foundation', 'CoreFoundation', 'AppKit',
-                        'AddressBook', 'CoreData', 'PreferencePanes', 'QTKit',
-                        'ScreenSaver', 'SyncServices', 'WebKit')
-    iphone_frameworks = ('UIKit', 'GameKit')
-    iphone_sdk_path = '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk'
-    return find_headers('', cocoa_frameworks) + \
-           find_headers(iphone_sdk_path, iphone_frameworks)
+    frameworks = ('AVFoundation', 'CFNetwork', 'CoreAudio', 'CoreBluetooth',
+            'CoreData', 'CoreFoundation', 'CoreGraphics', 'CoreImage',
+            'CoreLocation', 'EventKit', 'Foundation', 'NotificationCenter',
+            'UIKit')
+    sdk_path = '/Applications/Xcode94.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk'
+    return find_headers(sdk_path, frameworks)
 
 def match_output(command, regex, group_num):
     '''

@@ -48,13 +48,12 @@ def output_file(fname=None):
     if not os.path.isdir(os.path.dirname(fname)):
         os.mkdir(os.path.dirname(fname))
 
-    cocoa_frameworks = ('Foundation', 'AppKit', 'AddressBook', 'CoreData',
-                        'PreferencePanes', 'QTKit', 'ScreenSaver',
-                        'SyncServices', 'WebKit')
-    iphone_frameworks = ('UIKit', 'GameKit')
-    iphone_sdk_path = '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.0.sdk'
-    headers_and_frameworks = find_headers('', cocoa_frameworks).items() + \
-                             find_headers(iphone_sdk_path, iphone_frameworks).items()
+    frameworks = ('AVFoundation', 'CFNetwork', 'CoreAudio', 'CoreBluetooth',
+            'CoreData', 'CoreFoundation', 'CoreGraphics', 'CoreImage',
+            'CoreLocation', 'EventKit', 'Foundation', 'NotificationCenter',
+            'UIKit')
+    sdk_path = '/Applications/Xcode94.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk'
+    headers_and_frameworks = find_headers(sdk_path, frameworks).items()
 
     superclasses = get_superclasses(get_classes(headers_and_frameworks))
     write_file(fname, superclasses)
