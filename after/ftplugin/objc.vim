@@ -3,5 +3,5 @@
 " Changes made by me.
 
 "" Set omnifunction
-setl omnifunc=objc#cocoacomplete#Complete
+"" setl omnifunc=objc#cocoacomplete#Complete
 
