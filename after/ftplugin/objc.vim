@@ -10,5 +10,5 @@ runtime after/synax/cocoa_keywords.vim
 setlocal inc=^\s*#\s*import
 
 "" Set omnifunction
-setl omnifunc=objc#cocoacomplete#Complete
+" setl omnifunc=objc#cocoacomplete#Complete
 
